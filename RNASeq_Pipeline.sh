@@ -7,8 +7,8 @@
 #
 #Created:
 
-#SBATCH --output=./slurm-out/slurm-%j.out
-#SBATCH --job-name=Paired_End_Pipeline
+#SBATCH --output=./slurm-out/main-%j.out
+#SBATCH --job-name=RNA_Seq_Pipeline
 #SBATCH --mem=8000
 #SBATCH -c 1
 
@@ -49,6 +49,9 @@ else
 fi
 export ENDINDX=$((${#PREFIXES[@]} - 1))
 
+#Mark DELOLD as 1 if you wish to delete old data in folders
+export DELOLD=0
+
 #COMMAND(s) TO RUN
 #Create Directories
 DIRARR=($TRIMDIR\
@@ -63,6 +66,11 @@ for dir in ${DIRARR[@]}
 do
   if [ ! -d $dir ]
   then
+    mkdir $dir
+  
+  elif [ $DELOLD == 1];
+  then
+    rm -rf $dir
     mkdir $dir
   fi
 done
@@ -93,8 +101,11 @@ postfastqcJB=$(sbatch --array [0-$ENDINDX]%3 --dependency=afterok:$sortRiboJB po
 #Sort rRNA-Trimmed reads step
 sortJB=$(sbatch --array [0-$ENDINDX] --dependency=afterok:$alignJB sort_array.sh | gawk '{print $4}')
 
+#Perform RSeQC modules
+rseqcJB=$(sbatch --array [0-$ENDINDX]%3 --dependency=afterok:$sortJB rseqc_array.sh | gawk '{print $4}')
+
 #Gene-level Counts Htseq-count step
-geneCountJB=$(sbatch --array [0-$ENDINDX] --dependency=afterok:$sortJB count_array.sh)
+geneCountJB=$(sbatch --array [0-$ENDINDX]%3 --dependency=afterok:$sortJB count_array.sh)
 
 #JOB LOG FOOTER
 perl -E 'say"="x80'; echo "JOB COMPLETED: `date`"; perl -E 'say"="x80'

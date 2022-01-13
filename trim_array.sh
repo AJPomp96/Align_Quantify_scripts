@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output=./slurm-out/slurm-%A_%a.out
+#SBATCH --output=./slurm-out/trim-%A_%a.out
 #SBATCH --job-name=trim
 #SBATCH --mem=8000
 #SBATCH -c 8

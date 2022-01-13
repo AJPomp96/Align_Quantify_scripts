@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output=./slurm-out/slurm-%A_%a.out
+#SBATCH --output=./slurm-out/prfqc-%A_%a.out
 #SBATCH --job-name=prefastqc
 #SBATCH --mem=8000
 #SBATCH -c 8

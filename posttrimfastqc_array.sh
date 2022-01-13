@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output=./slurm-out/slurm-%A_%a.out
+#SBATCH --output=./slurm-out/pofqc-%A_%a.out
 #SBATCH --job-name=postfastqc
 #SBATCH --mem=8000
 #SBATCH -c 8

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output=./slurm-out/slurm-%A_%a.out
+#SBATCH --output=./slurm-out/ribos-%A_%a.out
 #SBATCH --job-name=ribosort
 #SBATCH --mem=64000
 #SBATCH -c 8

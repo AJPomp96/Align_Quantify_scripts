@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output=./slurm-out/slurm-%A_%a.out
+#SBATCH --output=./slurm-out/count-%A_%a.out
 #SBATCH --job-name=count
 #SBATCH --mem=32000
 #SBATCH -c 1
