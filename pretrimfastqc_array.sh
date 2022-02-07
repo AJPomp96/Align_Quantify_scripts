@@ -21,7 +21,7 @@ if ls -1 $FQDIR | grep -q "R[12]"
 then
   echo "fastq is paired end"
   FILE1=${FILES[0]}
-  FILE2=${FILES[0]}
+  FILE2=${FILES[1]}
   echo $FILE1,$FILE2
   fastqc ${FILE1} -o ${PRETRIM_QC}
   fastqc ${FILE2} -o ${PRETRIM_QC}
