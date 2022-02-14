@@ -42,5 +42,7 @@ else
   -r $BEDPATH\
   > ${RSEQCDIR}/${PREFIXES[$SLURM_ARRAY_TASK_ID]}_inf_exp.txt
 
+fi
+
 #JOB LOG FOOTER
 perl -E 'say"="x80'; echo "JOB COMPLETED: `date`"; perl -E 'say"="x80'
