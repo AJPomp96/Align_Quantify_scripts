@@ -68,7 +68,7 @@ do
   then
     mkdir $dir
   
-  elif [ $DELOLD == 1];
+  elif [ $DELOLD == 1 ];
   then
     rm -rf $dir
     mkdir $dir
