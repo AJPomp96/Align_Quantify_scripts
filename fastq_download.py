@@ -1,7 +1,8 @@
 import subprocess
+import os
 
 # samples correspond to
-wd = "/work/ajpompet/04Feb2022_EpivFiberE16.5_Cvekl_Analysis/fastq"
+wd = os.getcwd()
 sra_numbers = [
     "SRR7086660", "SRR7086661", "SRR7086662", "SRR7086663", "SRR7086664", "SRR7086665"
     ]
