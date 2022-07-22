@@ -35,7 +35,7 @@ export BEDPATH=/work/ajpompet/EnsMm_grc39_104/rseqc_gene_models.bed
 export HISAT2_INDEXES=/work/ajpompet/EnsMm_grc39_104
 export HISAT2_PREFIX=EnsMm_grc39_104
 #Detect if fastq files are paired end or single end reads
-if ls -1 $FQDIR | grep -q "R[12]"
+if ls -1 $FQDIR | grep -q "R[2]"
 then
   echo "fastq is paired end"
   export GREP="L[0-9]\{3\}_R1_[0-9]\{3\}\.fastq\.gz"
