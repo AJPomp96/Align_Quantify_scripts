@@ -17,7 +17,7 @@ cd ${FQDIR}
 FILES=($(ls -1 | grep "${PREFIXES[$SLURM_ARRAY_TASK_ID]}.*\.fastq.gz"))
 
 #get quality report of fastq files pretrim
-if ls -1 $FQDIR | grep -q "R[12]"
+if ls -1 $FQDIR | grep -q "R[2]"
 then
   echo "fastq is paired end"
   FILE1=${FILES[0]}

@@ -16,7 +16,7 @@ PREFIXES=($(ls -1 ${FQDIR} | grep $GREP | sed -r $SED | uniq))
 cd ${TRIMDIR}
 
 #get quality report of fastq files posttrim
-if ls -1 $FQDIR | grep -q "R[12]"
+if ls -1 $FQDIR | grep -q "R[2]"
 then
   echo "fastq is paired end"
   fastqc ${PREFIXES[$SLURM_ARRAY_TASK_ID]}_ribotrim_R1.fq -o ${POSTTRIM_QC}

@@ -18,7 +18,7 @@ INPUT=${PREFIXES[$SLURM_ARRAY_TASK_ID]}_sorted_rf_alignment.bam
 #COMMAND(s) TO RUN
 echo "PROCESSING FILE: ${INPUT}"
 
-if ls -1 $FQDIR | grep -q "R[12]"
+if ls -1 $FQDIR | grep -q "R[2]"
 then
   echo "fastq is paired end"
 
