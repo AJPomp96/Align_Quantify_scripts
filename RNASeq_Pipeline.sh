@@ -29,11 +29,11 @@ export POSTTRIM_QC=$(pwd)/PostTrim_FastQC
 export KLSTODIR=$(pwd)/Kallisto
 export RSEQCDIR=$(pwd)/RSeQC_Results
 #export KLSTOIDX=/work/ajpompet/EnsMm_grc39_104/EnsMm_104_Kallisto_total
-export GTFPATH=/work/ajpompet/EnsMm_grc39_104/Mus_musculus.GRCm39.104.gtf
-export DEXPATH=/work/ajpompet/EnsMm_grc39_104/EnsMm_104_DEXSeq_Annot.gff
-export BEDPATH=/work/ajpompet/EnsMm_grc39_104/rseqc_gene_models.bed
-export HISAT2_INDEXES=/work/ajpompet/EnsMm_grc39_104
-export HISAT2_PREFIX=EnsMm_grc39_104
+export GTFPATH=/work/ajpompet/EnsMm_grc39_107/Mus_musculus.GRCm39.107.gtf
+export DEXPATH=/work/ajpompet/EnsMm_grc39_107/EnsMm_107_DEXSeq_Annot.gff
+export BEDPATH=/work/ajpompet/EnsMm_grc39_107/rseqc_gene_models.bed
+export HISAT2_INDEXES=/work/ajpompet/EnsMm_grc39_107
+export HISAT2_PREFIX=EnsMm_grc39_107
 #Detect if fastq files are paired end or single end reads
 if ls -1 $FQDIR | grep -q "R[2]"
 then
